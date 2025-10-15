@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Financial Literacy for College Students</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header id="top">
+    <nav>
+      <a href="#calculator">Calculator</a>
+      <a href="#goals">Goals & Points</a>
+      <a href="#learn">Learn</a>
+    </nav>
+    <h1>Build a smarter semester budget</h1>
+    <p>Use your FAFSA refund to make a simple monthly plan, earn points for good habits, and learn fast.</p>
+    <p><a href="#calculator">Start Calculator</a> • <a href="#goals">Earn Points</a></p>
+  </header>
+
+  <main>
+    <!-- CALCULATOR -->
+    <section id="calculator" aria-labelledby="calcTitle">
+      <h2 id="calcTitle">FAFSA → Monthly Budget Calculator</h2>
+      <form id="calcForm">
+        <label>FAFSA total ($) <input id="fafsaTotal" type="number" min="0" required></label>
+        <label>Disbursements
+          <select id="disbursements"><option>1</option><option>2</option></select>
+        </label>
+        <label>Months in term
+          <select id="months"><option>4</option><option>5</option></select>
+        </label>
+        <label>Rent ($/mo) <input id="rent" type="number" min="0" value="0"></label>
+        <label>Food ($/mo) <input id="food" type="number" min="0" value="0"></label>
+        <label>Transport ($/mo) <input id="transport" type="number" min="0" value="0"></label>
+        <label>Other ($/mo) <input id="other" type="number" min="0" value="0"></label>
+        <button type="button" id="btnCalculate">Calculate</button>
+        <button type="button" id="btnSavePlan">Save Plan</button>
+      </form>
+
+      <h3>Monthly Plan</h3>
+      <div>Monthly Total: $<span id="monthlyTotal">0</span></div>
+      <table>
+        <thead><tr><th>Category</th><th>$/mo</th></tr></thead>
+        <tbody id="budgetTbody"></tbody>
+      </table>
+    </section>
+
+    <!-- GOALS & POINTS -->
+    <section id="goals" aria-labelledby="goalsTitle">
+      <h2 id="goalsTitle">Goals & Points</h2>
+      <div>
+        <button id="btnCheckIn" type="button">Daily Check-In (+5)</button>
+        <span>Points: <strong id="pointsTotal">0</strong> | Badge: <strong id="badgeLabel">—</strong></span>
+      </div>
+      <ul>
+        <li><label><input id="goalBudget" type="checkbox"> Stay under weekly budget (+10)</label></li>
+        <li><label><input id="goalSavings" type="checkbox"> Move $10 to savings (+10)</label></li>
+        <li><label><input id="goalScholarship" type="checkbox"> Apply to 1 scholarship (+10)</label></li>
+      </ul>
+    </section>
+
+    <!-- LEARN -->
+    <section id="learn" aria-labelledby="learnTitle">
+      <h2 id="learnTitle">Learn</h2>
+      <div id="tagFilters"></div>
+      <div id="articlesGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#top">Back to top</a>
+    <p>© 2025 Financial Literacy Site</p>
+  </footer>
+
+  <script src="js/calculator.js"></script>
+  <script src="js/points.js"></script>
+</body>
+</html>
