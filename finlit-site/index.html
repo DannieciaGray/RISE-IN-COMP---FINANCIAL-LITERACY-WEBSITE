@@ -7,52 +7,90 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- ================= HEADER / NAV ================= -->
   <header id="top">
-    <nav>
+    <nav aria-label="Primary">
+      <!-- TODO(Leanne): Replace plain anchors with a semantic nav list -->
+      <!-- Keep these hrefs so anchors work -->
       <a href="#calculator">Calculator</a>
       <a href="#goals">Goals & Points</a>
       <a href="#learn">Learn</a>
     </nav>
+
+    <!-- TODO(Leanne): Improve hero copy & heading hierarchy -->
     <h1>Build a smarter semester budget</h1>
-    <p>Use your FAFSA refund to make a simple monthly plan, earn points for good habits, and learn fast.</p>
-    <p><a href="#calculator">Start Calculator</a> • <a href="#goals">Earn Points</a></p>
+    <p><!-- TODO: Write a 1–2 sentence value proposition for students --></p>
+    <p>
+      <a href="#calculator">Start Calculator</a> • <a href="#goals">Earn Points</a>
+    </p>
   </header>
 
   <main>
-    <!-- CALCULATOR -->
+    <!-- ========== CALCULATOR (Purpose: turn FAFSA into a monthly plan) ========== -->
     <section id="calculator" aria-labelledby="calcTitle">
       <h2 id="calcTitle">FAFSA → Monthly Budget Calculator</h2>
-      <form id="calcForm">
-        <label>FAFSA total ($) <input id="fafsaTotal" type="number" min="0" required></label>
-        <label>Disbursements
-          <select id="disbursements"><option>1</option><option>2</option></select>
-        </label>
-        <label>Months in term
-          <select id="months"><option>4</option><option>5</option></select>
-        </label>
-        <label>Rent ($/mo) <input id="rent" type="number" min="0" value="0"></label>
-        <label>Food ($/mo) <input id="food" type="number" min="0" value="0"></label>
-        <label>Transport ($/mo) <input id="transport" type="number" min="0" value="0"></label>
-        <label>Other ($/mo) <input id="other" type="number" min="0" value="0"></label>
+
+      <!-- TODO(Leanne): Provide short helper text for novices -->
+      <p id="calcHelp"><!-- ex: Enter your FAFSA refund and monthly costs to see your plan. --></p>
+
+      <!-- Keep IDs: JS depends on these -->
+      <form id="calcForm" aria-describedby="calcHelp">
+        <!-- FAFSA & term inputs -->
+        <label for="fafsaTotal">FAFSA total ($)</label>
+        <input id="fafsaTotal" type="number" min="0" required />
+
+        <label for="disbursements">Disbursements</label>
+        <select id="disbursements">
+          <option>1</option><option>2</option>
+        </select>
+
+        <label for="months">Months in term</label>
+        <select id="months">
+          <option>4</option><option>5</option>
+        </select>
+
+        <!-- Monthly categories -->
+        <label for="rent">Rent ($/mo)</label>
+        <input id="rent" type="number" min="0" value="0" />
+
+        <label for="food">Food ($/mo)</label>
+        <input id="food" type="number" min="0" value="0" />
+
+        <label for="transport">Transport ($/mo)</label>
+        <input id="transport" type="number" min="0" value="0" />
+
+        <label for="other">Other ($/mo)</label>
+        <input id="other" type="number" min="0" value="0" />
+
+        <!-- Buttons (wired later in JS) -->
         <button type="button" id="btnCalculate">Calculate</button>
         <button type="button" id="btnSavePlan">Save Plan</button>
       </form>
 
+      <!-- Results area -->
       <h3>Monthly Plan</h3>
       <div>Monthly Total: $<span id="monthlyTotal">0</span></div>
-      <table>
+
+      <!-- TODO(Leanne): Add an accessible caption/aria for the table if needed -->
+      <table aria-label="Budget categories">
         <thead><tr><th>Category</th><th>$/mo</th></tr></thead>
-        <tbody id="budgetTbody"></tbody>
+        <tbody id="budgetTbody"><!-- JS renders rows here --></tbody>
       </table>
     </section>
 
-    <!-- GOALS & POINTS -->
+    <!-- ========== GOALS & POINTS (Purpose: small habits + milestones) ========== -->
     <section id="goals" aria-labelledby="goalsTitle">
       <h2 id="goalsTitle">Goals & Points</h2>
+
       <div>
         <button id="btnCheckIn" type="button">Daily Check-In (+5)</button>
-        <span>Points: <strong id="pointsTotal">0</strong> | Badge: <strong id="badgeLabel">—</strong></span>
+        <span>
+          Points: <strong id="pointsTotal">0</strong> |
+          Badge: <strong id="badgeLabel">—</strong>
+        </span>
       </div>
+
+      <!-- TODO(Leanne): Convert to <fieldset> with <legend> for better a11y -->
       <ul>
         <li><label><input id="goalBudget" type="checkbox"> Stay under weekly budget (+10)</label></li>
         <li><label><input id="goalSavings" type="checkbox"> Move $10 to savings (+10)</label></li>
@@ -60,15 +98,19 @@
       </ul>
     </section>
 
-    <!-- LEARN -->
+    <!-- ========== LEARN (Purpose: 8 short articles + tag filtering) ========== -->
     <section id="learn" aria-labelledby="learnTitle">
       <h2 id="learnTitle">Learn</h2>
-      <div id="tagFilters"></div>
-      <div id="articlesGrid"></div>
+      <!-- TODO(Leanne): Intro sentence explaining how to use tags and cards -->
+      <p><!-- ex: Filter by tag and skim quick tips to make better money moves. --></p>
+
+      <div id="tagFilters"><!-- JS builds chips here --></div>
+      <div id="articlesGrid"><!-- JS renders article cards here --></div>
     </section>
   </main>
 
   <footer>
+    <!-- TODO(Leanne): Improve footer semantics/content -->
     <a href="#top">Back to top</a>
     <p>© 2025 Financial Literacy Site</p>
   </footer>

@@ -1,0 +1,136 @@
+/* =========================================
+   FinLit CSS — Teaching Skeleton (Week 1)
+   Purpose: Provide structure only. Students decide styles.
+   ========================================= */
+
+/* ========== 0) Design Tokens (TODO) ========== */
+/* TODO(L’Oreal): choose values for these later */
+:root {
+  /* --maxw: ;      // e.g., 960px */
+  /* --space: ;     // e.g., 1rem */
+  /* --font: ;      // e.g., system-ui, sans-serif */
+  /* --accent: ;    // e.g., #3B82F6 */
+  /* --text: ;      // base text color */
+  /* --bg: ;        // page background */
+}
+
+/* ========== 1) Minimal Reset ========== */
+/* Keep this tiny; we’ll style deliberately later. */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* ========== 2) Base (TODO) ========== */
+/* TODO(L’Oreal): set body font, colors, spacing, container width */
+body {
+  /* font-family: var(--font); */
+  /* color: var(--text); */
+  /* background: var(--bg); */
+  /* margin-inline: auto; */
+  /* max-width: var(--maxw); */
+  /* padding: var(--space); */
+  /* line-height: 1.5; */
+}
+
+/* Headings & spacing (TODO) */
+h1, h2, h3 {
+  /* TODO: margins, sizes, weights */
+}
+p, ul, ol {
+  /* TODO: vertical rhythm */
+}
+
+/* ========== 3) Accessibility (TODO) ========== */
+/* Visible focus outlines for keyboard users */
+a:focus, button:focus, input:focus, select:focus {
+  /* outline: 3px solid var(--accent); */
+  /* outline-offset: 2px; */
+}
+
+/* Skip links / visually hidden helper (optional) */
+/* .visually-hidden { */
+/*   position: absolute; width: 1px; height: 1px; */
+/*   padding: 0; margin: -1px; overflow: hidden; */
+/*   clip: rect(0 0 0 0); white-space: nowrap; border: 0; */
+/* } */
+
+/* ========== 4) Layout (mobile-first) (TODO) ========== */
+/* Space sections apart */
+section {
+  /* margin-block: calc(var(--space) * 2); */
+}
+
+/* Containers (optional utility) */
+/* .container { */
+/*   max-width: var(--maxw); */
+/*   margin-inline: auto; */
+/*   padding-inline: var(--space); */
+/* } */
+
+/* Calculator layout hooks (leave empty for Week 1) */
+/* .calc-wrap { } */
+/* .results-wrap { } */
+
+/* ========== 5) Components (TODO) ========== */
+/* Buttons */
+button {
+  /* background: var(--accent); */
+  /* color: #fff; */
+  /* border: 0; */
+  /* border-radius: .5rem; */
+  /* padding: .6rem 1rem; */
+  /* cursor: pointer; */
+}
+
+/* Forms */
+label {
+  /* display: block; */
+  /* margin-block: .5rem; */
+}
+input, select {
+  /* width: 100%; */
+  /* padding: .5rem; */
+  /* border: 1px solid #ddd; */
+  /* border-radius: .375rem; */
+}
+
+/* Tables */
+table {
+  /* width: 100%; */
+  /* border-collapse: collapse; */
+}
+th, td {
+  /* padding: .5rem; */
+  /* border-bottom: 1px solid #eee; */
+  /* text-align: left; */
+}
+/* .table--striped tr:nth-child(even) { background: #fafafa; } */
+
+/* Cards for Learn articles */
+#articlesGrid article {
+  /* background: #fff; */
+  /* border: 1px solid #eee; */
+  /* border-radius: .5rem; */
+  /* padding: var(--space); */
+  /* box-shadow: 0 1px 2px rgba(0,0,0,.04); */
+}
+
+/* Tag chips */
+#tagFilters button {
+  /* background: transparent; */
+  /* border: 1px solid #ddd; */
+  /* border-radius: 999px; */
+  /* padding: .25rem .6rem; */
+  /* margin: 0 .5rem .5rem 0; */
+}
+
+/* ========== 6) Media Queries (Week 2+) (TODO) ========== */
+/* Desktop: two-column for calculator/results */
+@media (min-width: 900px) {
+  /* TODO: build layout */
+  /* .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space); } */
+}
+
+/* ========== 7) Print Styles (Week 2) (TODO) ========== */
+/* @media print { */
+/*   TODO: Make budget table print cleanly (remove colors/shadows) */
+/* } */

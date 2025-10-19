@@ -1,0 +1,21 @@
+[
+  // ============================
+  // Week 1: Provide 8 short items total (title, tag, body)
+  // Tags example set: "budget", "faid", "food", "transport", "savings", "scholarships", "credit"
+  // Keep content brief and student-friendly.
+  // ============================
+
+  {
+    "title": "Start a simple budget",
+    "tag": "budget",
+    "body": "List essentials first, then fun, then savings."
+  },
+
+  {
+    "title": "Disbursement 101",
+    "tag": "faid",
+    "body": "If you get 2 disbursements, plan per term before dividing by months."
+  }
+
+  // TODO: Add 6 more items following this exact shape
+]
