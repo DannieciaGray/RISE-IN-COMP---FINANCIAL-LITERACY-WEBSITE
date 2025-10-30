@@ -6,12 +6,12 @@
 /* ========== 0) Design Tokens (TODO) ========== */
 /* TODO(L’Oreal): choose values for these later */
 :root {
-  /* --maxw: ;      // e.g., 960px */
-  /* --space: ;     // e.g., 1rem */
-  /* --font: ;      // e.g., system-ui, sans-serif */
-  /* --accent: ;    // e.g., #3B82F6 */
-  /* --text: ;      // base text color */
-  /* --bg: ;        // page background */
+  --maxw: 960px; /* max width of the page */
+  --space: 1rem; /* basic spacing */
+  --font: system-ui, sans-serif; /* obv */
+  --accent: #3B82F6; /* main color */
+  --text: #111; /* obv text color */
+  --bg: hsl(240, 100%, 82%); /* page backgroundf (ex: if i want to add random pic) */
 }
 
 /* ========== 1) Minimal Reset ========== */
@@ -22,41 +22,57 @@ html, body { margin: 0; padding: 0; }
 /* ========== 2) Base (TODO) ========== */
 /* TODO(L’Oreal): set body font, colors, spacing, container width */
 body {
-  /* font-family: var(--font); */
-  /* color: var(--text); */
-  /* background: var(--bg); */
-  /* margin-inline: auto; */
-  /* max-width: var(--maxw); */
-  /* padding: var(--space); */
-  /* line-height: 1.5; */
+  max-width: var(--maxw); /* this is for the width of text on screen */
+  margin-inline: auto; /* centers whole page horizontally */
+  font-family: var(--font); /* fonts */
+  background: var(--bg); /* bg color */
+  padding: var(--space); /* adding spaces inbetween stuff (ex: texts, tables, iamges, etc;) */
+  line-height: 1.5; /* spacing between the lines */
+  color: var(--text); /* main text color */
 }
 
 /* Headings & spacing (TODO) */
 h1, h2, h3 {
   /* TODO: margins, sizes, weights */
+  margin-top: 0; /* my margins for either top or above the heading */
+  margin-bottom: var(--space); /* margins for bottom + margins for constistent vertical spacing */
+  font-weight: 600; /* makes it less or more "bolded" it being your text */
+  line-height: 1.2; /* if you had like two lines of headers for ex, it would make them closer in spacing */
 }
+
 p, ul, ol {
   /* TODO: vertical rhythm */
+  margin-bottom: var(--space); /* margins for paragraphs */
+  margin-top: 0;
 }
+
+ul, ol {
+  padding-left: 1.25rem; /* indents the bullet points in the list */
+}
+
+li {
+  margin-bottom: 0.4rem; /* adds small spaces between lists so it's not crammed */
+}
+
 
 /* ========== 3) Accessibility (TODO) ========== */
 /* Visible focus outlines for keyboard users */
 a:focus, button:focus, input:focus, select:focus {
-  /* outline: 3px solid var(--accent); */
-  /* outline-offset: 2px; */
+  outline: 3px solid var(--accent);
+  outline-offset: 2px; 
 }
 
 /* Skip links / visually hidden helper (optional) */
-/* .visually-hidden { */
-/*   position: absolute; width: 1px; height: 1px; */
-/*   padding: 0; margin: -1px; overflow: hidden; */
-/*   clip: rect(0 0 0 0); white-space: nowrap; border: 0; */
-/* } */
+.visually-hidden { 
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+} 
 
 /* ========== 4) Layout (mobile-first) (TODO) ========== */
 /* Space sections apart */
 section {
-  /* margin-block: calc(var(--space) * 2); */
+  margin-block: calc(var(--space) * 2); 
 }
 
 /* Containers (optional utility) */
@@ -73,18 +89,18 @@ section {
 /* ========== 5) Components (TODO) ========== */
 /* Buttons */
 button {
-  /* background: var(--accent); */
-  /* color: #fff; */
-  /* border: 0; */
-  /* border-radius: .5rem; */
-  /* padding: .6rem 1rem; */
-  /* cursor: pointer; */
+  background: var(--accent);
+  color: #fff; 
+  border: 0;
+  border-radius: .5rem; 
+  padding: .6rem 1rem;
+  cursor: pointer; 
 }
 
 /* Forms */
 label {
-  /* display: block; */
-  /* margin-block: .5rem; */
+  display: block;
+  margin-block: .5rem;
 }
 input, select {
   /* width: 100%; */
@@ -95,9 +111,10 @@ input, select {
 
 /* Tables */
 table {
-  /* width: 100%; */
-  /* border-collapse: collapse; */
+  width: 100%; 
+  border-collapse: collapse; 
 }
+
 th, td {
   /* padding: .5rem; */
   /* border-bottom: 1px solid #eee; */
@@ -106,21 +123,21 @@ th, td {
 /* .table--striped tr:nth-child(even) { background: #fafafa; } */
 
 /* Cards for Learn articles */
-#articlesGrid article {
-  /* background: #fff; */
-  /* border: 1px solid #eee; */
-  /* border-radius: .5rem; */
-  /* padding: var(--space); */
-  /* box-shadow: 0 1px 2px rgba(0,0,0,.04); */
+#article-grid article {
+  background: #fff; 
+  border: 1px solid #eee; 
+  border-radius: .5rem;
+  padding: var(--space); 
+  box-shadow: 0 1px 2px rgba(0,0,0,.04); 
 }
 
 /* Tag chips */
-#tagFilters button {
-  /* background: transparent; */
-  /* border: 1px solid #ddd; */
-  /* border-radius: 999px; */
-  /* padding: .25rem .6rem; */
-  /* margin: 0 .5rem .5rem 0; */
+#article-chips {
+  background: transparent; 
+  border: 1px solid #ddd; 
+  border-radius: 999px; 
+  padding: .25rem .6rem; 
+  margin: 0 .5rem .5rem 0; 
 }
 
 /* ========== 6) Media Queries (Week 2+) (TODO) ========== */
