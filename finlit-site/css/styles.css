@@ -9,9 +9,11 @@
   --maxw: 960px; /* max width of the page */
   --space: 1rem; /* basic spacing */
   --font: system-ui, sans-serif; /* obv */
-  --accent: #3B82F6; /* main color */
+  --accent: #0039a6;
+  --accent-2: #c60c30; /* main color */
   --text: #111; /* obv text color */
-  --bg: hsl(240, 100%, 82%); /* page backgroundf (ex: if i want to add random pic) */
+  --bg: #fff; /* page backgroundf (ex: if i want to add random pic) */
+  --muted: #f6f7f9;
 }
 
 /* ========== 1) Minimal Reset ========== */
@@ -77,14 +79,13 @@ section {
 
 /* Containers (optional utility) */
 /* .container { */
-/*   max-width: var(--maxw); */
-/*   margin-inline: auto; */
-/*   padding-inline: var(--space); */
-/* } */
+ /* max-width: var(--maxw); */
+  /* margin-inline: auto; */ 
+  /* padding-inline: var(--space); } */
 
 /* Calculator layout hooks (leave empty for Week 1) */
-/* .calc-wrap { } */
-/* .results-wrap { } */
+/* .calc-wrap { }
+.results-wrap { } 
 
 /* ========== 5) Components (TODO) ========== */
 /* Buttons */
@@ -103,10 +104,10 @@ label {
   margin-block: .5rem;
 }
 input, select {
-  /* width: 100%; */
-  /* padding: .5rem; */
-  /* border: 1px solid #ddd; */
-  /* border-radius: .375rem; */
+  width: 100%;
+  padding: .5rem; 
+  border: 1px solid #ddd;
+  border-radius: .375rem;
 }
 
 /* Tables */
@@ -116,11 +117,20 @@ table {
 }
 
 th, td {
-  /* padding: .5rem; */
-  /* border-bottom: 1px solid #eee; */
-  /* text-align: left; */
+padding: .75rem;
+border-bottom: 1px solid var(--muted);
+text-align: left; 
+font-weight: normal;
 }
-/* .table--striped tr:nth-child(even) { background: #fafafa; } */
+
+tbody tr:nth-child(even) {
+  color: #fff;
+}
+
+tbody tr:hover {
+  background: var(--accent-2);
+  color: #fff;
+}
 
 /* Cards for Learn articles */
 #article-grid article {
@@ -129,6 +139,21 @@ th, td {
   border-radius: .5rem;
   padding: var(--space); 
   box-shadow: 0 1px 2px rgba(0,0,0,.04); 
+}
+
+#article-grid {
+  display: grid;
+  gap: var(--space); /* space between cards */
+}
+
+/* Card hover lift effect */
+#article-grid article {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#article-grid article:hover {
+  transform: translateY(-4px); /* lifts upward slightly */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Tag chips */
@@ -140,14 +165,76 @@ th, td {
   margin: 0 .5rem .5rem 0; 
 }
 
+#article-chips .tag-chip {
+  display: inline-block;
+  background: var (--muted);
+  color: var(--text);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: .25rem .6rem;
+  margin: 0 .5rem .5rem 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#article-chips .tag-chip:hover,
+#article-chips .tag-chip:focus {
+  border-color: var(--accent); /* blue border */
+}
+
+/* ========== Nav ========== */
+nav {
+  background: var(--bg);
+  padding: var(--space);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space);
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: .5rem .75rem;
+  border-radius: .25rem;
+}
+
+nav a:hover,
+nav a:focus {
+  background: var(--accent);
+  color: #fff;
+}
+
+
 /* ========== 6) Media Queries (Week 2+) (TODO) ========== */
 /* Desktop: two-column for calculator/results */
 @media (min-width: 900px) {
-  /* TODO: build layout */
-  /* .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space); } */
+  body{
+    background: #fff;
+    color: #000;
+    box-shadow: none;
+  }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space); }
 }
 
 /* ========== 7) Print Styles (Week 2) (TODO) ========== */
-/* @media print { */
-/*   TODO: Make budget table print cleanly (remove colors/shadows) */
-/* } */
+@media print {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: avoid; /* stops row from going across pages */
+  }
+
+ th, td {
+  border: 1px solid #000; /* black border */
+  padding: 0.5rem;
+  text-align: left;
+ }
+
+}
