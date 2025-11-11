@@ -124,12 +124,13 @@ font-weight: normal;
 }
 
 tbody tr:nth-child(even) {
-  color: #fff;
+  color: #5b5c5e; /* subtle stripe */
+  background: var(--muted);
 }
 
 tbody tr:hover {
   background: var(--accent-2);
-  color: #fff;
+  color: #fff; 
 }
 
 /* Cards for Learn articles */
@@ -184,30 +185,36 @@ tbody tr:hover {
 
 /* ========== Nav ========== */
 nav {
-  background: var(--bg);
-  padding: var(--space);
+  background: var(--accent);       /* main color bar */
+  width: 100vw;                    /* span full viewport width */
+  position: relative;              /* keep it in flow */
+  left: 50%;                       /* cancel body centering */
+  right: 50%;
+  margin-left: -50vw;              /* stretch out of the centered container */
+  margin-right: -50vw;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
-  gap: var(--space);
+  justify-content: center;         /* center the links horizontally */
+  gap: 2rem;
+  list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.75rem 0;
 }
 
 nav a {
+  color: #fff;
   text-decoration: none;
-  color: var(--text);
   font-weight: 500;
-  padding: .5rem .75rem;
-  border-radius: .25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
 }
 
 nav a:hover,
 nav a:focus {
-  background: var(--accent);
-  color: #fff;
+  background:#4c6490; /* darker blue on hover */
+  color: #fff; 
 }
 
 
@@ -215,7 +222,7 @@ nav a:focus {
 /* Desktop: two-column for calculator/results */
 @media (min-width: 900px) {
   body{
-    background: #fff;
+    background: #fff; 
     color: #000;
     box-shadow: none;
   }
