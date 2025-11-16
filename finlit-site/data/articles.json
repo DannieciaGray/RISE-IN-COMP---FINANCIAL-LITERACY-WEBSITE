@@ -1,9 +1,5 @@
 [
-  // ============================
-  // Week 1: Provide 8 short items total (title, tag, body)
-  // Tags example set: "budget", "faid", "food", "transport", "savings", "scholarships", "credit"
-  // Keep content brief and student-friendly.
-  // ============================
+ 
 
   {
     "title": "Start a simple budget",
@@ -15,7 +11,43 @@
     "title": "Disbursement 101",
     "tag": "faid",
     "body": "If you get 2 disbursements, plan per term before dividing by months."
-  }
+  },
 
-  // TODO: Add 6 more items following this exact shape
+  {
+    "title": "Use public transport",
+    "tag": "transport",
+    "body": "Get a student bus or metro pass instead of paying for gas and parking." 
+  },
+
+  {
+    "title": "Smart grocery shopping",
+    "tag": "food",
+    "body": "Plan meals before shopping to spend less and waste less. "
+  },
+  
+  {
+    "title": "Student Meal Deals",
+    "tag": "food",
+    "body": "Sign up for student discount programs at local shoppes around you! "
+  },
+
+  {
+    "title": "Apply for scholarships early",
+    "tag": "scholarships",
+    "body": "Search and apply for scholarships before deadlines to get free funding."
+  },
+
+  {
+    "title": "Build credit wisely",
+    "tag": "credit",
+    "body": "Use a student credit card for small purchases and pay it off monthly."
+  },
+
+  {
+    "title": "Emergency fund first",
+    "tag": "savings",
+    "body": "Save at least $100 as a small emergency cushion before big expenses."
+  } 
+
+ 
 ]
