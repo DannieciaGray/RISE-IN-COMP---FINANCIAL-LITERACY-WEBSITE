@@ -124,12 +124,13 @@ font-weight: normal;
 }
 
 tbody tr:nth-child(even) {
-  color: #fff;
+  color: #666363; /* darker text for even rows */
+  background: var(--muted); /* light gray bg for even rows */
 }
 
 tbody tr:hover {
   background: var(--accent-2);
-  color: #fff;
+  color: #fff; /* white text on hover */
 }
 
 /* Cards for Learn articles */
@@ -184,16 +185,25 @@ tbody tr:hover {
 
 /* ========== Nav ========== */
 nav {
-  background: var(--bg);
+  background:#88878777;
   padding: var(--space);
+  border-radius: .5rem;
+  width: 100vw;                    /* span full viewport width */
+  position: relative;              /* keep it in flow */
+  left: 50%;                       /* cancel body centering */
+  right: 50%;
+  margin-left: -50vw;              /* stretch out of the centered container */
+  margin-right: -50vw;
+  font-size: large; /* make nav text a bit bigger */
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: var(--space);
+  gap: 2rem;
   margin: 0;
-  padding: 0;
+  padding: 0.75rem 0;
+  justify-content: center; /* center nav links */
 }
 
 nav a {

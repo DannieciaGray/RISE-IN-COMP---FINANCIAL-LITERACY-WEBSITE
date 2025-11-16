@@ -41,13 +41,13 @@ function renderArticles(items) {
   // append to grid
 
 }
-function buildTagChips(items) {
+function buildArticleChips(items) {
   // Unique tags → buttons in #tagFilters:
   //  - "All" shows everything
   //  - clicking a tag filters to matching cards
 
 }
-function filterTag(tag) {
+function articleChips(tag) {
   // Show/hide #articlesGrid > article by data-tag
 
 }
