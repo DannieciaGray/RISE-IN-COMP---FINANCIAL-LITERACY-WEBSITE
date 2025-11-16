@@ -1,53 +1,44 @@
-[
- 
-
-  {
-    "title": "Start a simple budget",
-    "tag": "budget",
-    "body": "List essentials first, then fun, then savings."
-  },
-
-  {
-    "title": "Disbursement 101",
-    "tag": "faid",
-    "body": "If you get 2 disbursements, plan per term before dividing by months."
-  },
-
-  {
-    "title": "Use public transport",
-    "tag": "transport",
-    "body": "Get a student bus or metro pass instead of paying for gas and parking." 
-  },
-
-  {
-    "title": "Smart grocery shopping",
-    "tag": "food",
-    "body": "Plan meals before shopping to spend less and waste less. "
-  },
-  
-  {
-    "title": "Student Meal Deals",
-    "tag": "food",
-    "body": "Sign up for student discount programs at local shoppes around you! "
-  },
-
-  {
-    "title": "Apply for scholarships early",
-    "tag": "scholarships",
-    "body": "Search and apply for scholarships before deadlines to get free funding."
-  },
-
-  {
-    "title": "Build credit wisely",
-    "tag": "credit",
-    "body": "Use a student credit card for small purchases and pay it off monthly."
-  },
-
-  {
-    "title": "Emergency fund first",
-    "tag": "savings",
-    "body": "Save at least $100 as a small emergency cushion before big expenses."
-  } 
-
- 
-]
+{
+  "articles": [
+    {
+      "title": "Start a simple budget",
+      "tag": "budget",
+      "body": "List essentials first, then fun, then savings."
+    },
+    {
+      "title": "Disbursement 101",
+      "tag": "faid",
+      "body": "If you get 2 disbursements, plan per term before dividing by months."
+    },
+    {
+      "title": "Use public transport",
+      "tag": "transport",
+      "body": "Get a student bus or metro pass instead of paying for gas and parking."
+    },
+    {
+      "title": "Smart grocery shopping",
+      "tag": "food",
+      "body": "Plan meals before shopping to spend less and waste less."
+    },
+    {
+      "title": "Student Meal Deals",
+      "tag": "food",
+      "body": "Sign up for student discount programs at local shoppes around you!"
+    },
+    {
+      "title": "Apply for scholarships early",
+      "tag": "scholarships",
+      "body": "Search and apply for scholarships before deadlines to get free funding."
+    },
+    {
+      "title": "Build credit wisely",
+      "tag": "credit",
+      "body": "Use a student credit card for small purchases and pay it off monthly."
+    },
+    {
+      "title": "Emergency fund first",
+      "tag": "savings",
+      "body": "Save at least $100 as a small emergency cushion before big expenses."
+    }
+  ]
+}

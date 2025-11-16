@@ -106,13 +106,13 @@ document.addEventListener("DOMContentLoaded",() => {
 // A function that allows user to save the websites created plan depending on their inputs
 function savePlan(){
   const inputs = {
-    fafsa: $("#in-fasfa").value,
-    disburse:$("#in-disburse").value,
-    months:$("#in-months").value,
-    rent: $("#in-rent").value,
-    food: $("#in-food").value,
-    transport: $("#in-transport").value,
-    other: $("#in-other").value
+    fafsa: $("in-fafsa").value,
+    disburse:$("in-disburse").value,
+    months:$("in-months").value,
+    rent: $("in-rent").value,
+    food: $("in-food").value,
+    transport: $("in-transport").value,
+    other: $("in-other").value
   };
   // Stores all inputs as a string in localStorage under the key "budget_v1"
   localStorage.setItem("budget_v1", JSON.stringify(inputs));
@@ -128,13 +128,13 @@ function loadPlan(){
   // Converts the saved JSON data back into an obkect
   const inputs = JSON.parse(data);
   // Fills the input fields with saved values or empty string if value DNE
-  $("#in-fasfa").value = inputs.fasfa || "";
-  $("#in-disburse").value = inputs.disburse || "";
-  $("#in-months").value = inputs.months || "";
-  $("#in-rent").value = inputs.rent || "";
-  $("#in-food").value = inputs.food || "";
-  $("#in-transport").value = inputs.transport || "";
-  $("#in-other").value = inputs.other || "";
+  $("in-fafsa").value = inputs.fafsa || "";
+  $("in-disburse").value = inputs.disburse || "";
+  $("in-months").value = inputs.months || "";
+  $("in-rent").value = inputs.rent || "";
+  $("in-food").value = inputs.food || "";
+  $("in-transport").value = inputs.transport || "";
+  $("in-other").value = inputs.other || "";
 
   // Recalculate budget with loaded values
   const result = computeBudget();

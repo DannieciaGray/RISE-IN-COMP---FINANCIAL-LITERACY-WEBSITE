@@ -33,14 +33,45 @@ function addPoints(delta, reason) {
 /** STEP 2 — Load & render articles */
 // TODO(Zaira): fetch("data/articles.json") → renderArticles(items); buildTagChips(items)
 async function loadArticles() {
+  try {
+    const res = await fetch("data/articles.json");
+    const data = await res.json();
 
+    // Handle either { articles: [...] } or plain [...]
+    const items = Array.isArray(data) ? data : (data.articles || []);
+
+    renderArticles(items);
+    // buildArticleChips(items); // leave for later if you want tags
+  } catch (err) {
+    console.error("Failed to load articles:", err);
+  }
 }
+
 function renderArticles(items) {
   // Clear #articlesGrid; for each item:
   // create <article data-tag="..."><h3>title</h3><p>body</p></article>
   // append to grid
 
+  const grid = id("article-grid");  // HTML uses id="article-grid"
+  if (!grid) return;
+
+  grid.textContent = ""; // clear old cards
+
+  items.forEach((item) => {
+    const card = document.createElement("article");
+    card.dataset.tag = item.tag || "";
+
+    const h3 = document.createElement("h3");
+    h3.textContent = item.title || "";
+
+    const p = document.createElement("p");
+    p.textContent = item.body || "";
+
+    card.append(h3, p);
+    grid.appendChild(card);
+  });
 }
+
 function buildArticleChips(items) {
   // Unique tags → buttons in #tagFilters:
   //  - "All" shows everything
@@ -53,6 +84,8 @@ function articleChips(tag) {
 }
 
 // TODO: Initialize UI on load
-// setPoints(getPoints());
-// loadArticles();
+document.addEventListener("DOMContentLoaded", () => {
+  // setPoints(getPoints());
+  loadArticles();
+});
 

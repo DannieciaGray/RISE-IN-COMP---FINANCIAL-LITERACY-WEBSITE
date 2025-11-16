@@ -168,7 +168,7 @@ tbody tr:hover {
 
 #article-chips .tag-chip {
   display: inline-block;
-  background: var (--muted);
+  background: var(--muted);
   color: var(--text);
   border: 1px solid transparent;
   border-radius: 999px;
