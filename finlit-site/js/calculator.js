@@ -45,7 +45,7 @@ function computeBudget() {
 
   // STEP 2: perform calculations ----------
   
-  const incomePerMonth = months > 0 ? (fafsaTotal/months): 0;   // if input months > 0 fasfa divided by months else IPM = 0
+  const incomePerMonth = months > 0 ? (fafsaTotal/disburse/months): 0;   // if input months > 0 fasfa divided by disbursement & months else IPM = 0
   const expenses = {Rent: rent, Food: food, Transport: transport, Other: other};  // specify what expenses are from input values
   const expensesPerMonth = rent + food + transport + other;    // total expenses per month
   const netPerMonth = incomePerMonth - expensesPerMonth;       // calculate remaining value after expenses per Month
@@ -102,5 +102,74 @@ document.addEventListener("DOMContentLoaded",() => {
 
 // ========== Week 2 (leave blank for now) ==========
 // TODO: Add Save/Load plan with localStorage("budget_v1")
-// TODO: Add warnings if totals exceed monthly amount
+
+// A function that allows user to save the websites created plan depending on their inputs
+function savePlan(){
+  const inputs = {
+    fafsa: $("#in-fasfa").value,
+    disburse:$("#in-disburse").value,
+    months:$("#in-months").value,
+    rent: $("#in-rent").value,
+    food: $("#in-food").value,
+    transport: $("#in-transport").value,
+    other: $("#in-other").value
+  };
+  // Stores all inputs as a string in localStorage under the key "budget_v1"
+  localStorage.setItem("budget_v1", JSON.stringify(inputs));
+  alert("Plan Saved!"); // Notify user that plan has been saved
+}
+// Loads user's plan from localStorage if it exists 
+function loadPlan(){
+  const data = localStorage.getItem("budget_v1");
+  if (!data){
+    alert("No saved plan found.");  // Notify user if no saved plan exists
+    return;
+  }
+  // Converts the saved JSON data back into an obkect
+  const inputs = JSON.parse(data);
+  // Fills the input fields with saved values or empty string if value DNE
+  $("#in-fasfa").value = inputs.fasfa || "";
+  $("#in-disburse").value = inputs.disburse || "";
+  $("#in-months").value = inputs.months || "";
+  $("#in-rent").value = inputs.rent || "";
+  $("#in-food").value = inputs.food || "";
+  $("#in-transport").value = inputs.transport || "";
+  $("#in-other").value = inputs.other || "";
+
+  // Recalculate budget with loaded values
+  const result = computeBudget();
+  renderBudget(result);
+  alert("Plan Loaded!"); // Notify user that plan has been loaded
+
+}
+
 // TODO: Handle edge cases (zeros, 1 vs 2 disbursements, etc.)
+// TODO: Add warnings if totals exceed monthly amount
+function onCalculate(){
+  const fafsaTotal = Number($("in-fafsa")?.value || 0 ); // FAFSA total input value if DNE default value = 0
+  const months = Number($("in-months")?.value || 4 );    // In-months total input value if DNE default value = 4
+
+  // Warning for missing info
+  if (fafsaTotal === 0){     // if fafsa total is 0 alert user to input value
+    alert("Please enter you FASFA refund first");
+    return;
+  }
+  if (months === 0){        // if months is 0 alert user to input value
+    alert("Please enter how many months are in your term.");
+    return;
+  }
+  // Calculate and display results
+  const result = computeBudget();
+  renderBudget(result);
+
+  // Warning for over budget
+  if (result.netPerMonth < 0){
+    const over = Math.abs(result.netPerMonth).toFixed(2);  // calculates how much user is over budget
+    alert(`You're over budget by $${over} this month!`);   // alert user of over budget amount
+  }
+  // Save after Calculation
+  const btnSave = $("btn-save");   // finds save button element
+  if (btnSave) btnSave.disabled = false;
+
+}
+
